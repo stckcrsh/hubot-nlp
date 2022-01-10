@@ -1,0 +1,34 @@
+{
+  "name": "Corpus with entities",
+  "locale": "en-US",
+  "data": [
+    {
+      "intent": "deployment_create",
+      "utterances": [
+        "deploy @project to @tenant @environment",
+        "deploy @project to @environment @tenant",
+        "please deploy @project to @environment",
+        "deploy @project @tenant to @environment",
+        "deploy @project to @environment",
+      ],
+      "answers": [
+        "Working on deploying {{ project }} to {{ environment }}:{{ tenant }}"
+      ]
+    }
+  ],
+  "entities": {
+    "environment": {
+      "options": {
+        "production": ["prod", "production", "prd", "Prod", "Production"],
+        "development": ["dev", "development", "Dev", "Development"],
+        "staging": ["stg", "staging", "stage", "Stg", "Staging", "Stage"]
+      }
+    },
+    "projects": {
+      "options": {
+        "disputes": ["disputes", "dispute", "Dispute", "Disputes"],
+        "complaints": ["complaints", "complaint", "Complaint", "Complaints"]
+      }
+    }
+  }
+}
